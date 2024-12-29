@@ -1,4 +1,4 @@
-import { Building2, TrendingUp, Laptop, Megaphone } from 'lucide-react';
+import { Building2, TrendingUp, Laptop, Megaphone, Shield, Music } from 'lucide-react';
 
 const ventures = [
   {
@@ -25,6 +25,18 @@ const ventures = [
     icon: Megaphone,
     category: 'Marketing',
   },
+  {
+    title: 'PrivateApp',
+    description: 'A privacy-first app offering secure messaging, content storage, and advanced access controls.',
+    icon: Shield,
+    category: 'Privacy & Security',
+  },
+  {
+    title: 'Priam Digital',
+    description: 'A forward-thinking music distribution platform offering comprehensive tech-driven solutions.',
+    icon: Music,
+    category: 'Music Technology',
+  },
 ];
 
 const Portfolio = () => {
@@ -38,7 +50,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {ventures.map((venture, index) => (
             <div
               key={venture.title}
