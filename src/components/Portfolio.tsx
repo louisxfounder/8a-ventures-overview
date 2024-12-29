@@ -1,4 +1,4 @@
-import { Building2, TrendingUp, Laptop, Megaphone, Shield, Music, Disc } from 'lucide-react';
+import { Building2, TrendingUp, Laptop, Megaphone, Shield, Music, Disc, Target } from 'lucide-react';
 
 const ventures = [
   {
@@ -42,6 +42,12 @@ const ventures = [
     description: 'A music brokerage specializing in distribution deals, licensing agreements, and the buying and selling of catalogs and music rights.',
     icon: Disc,
     category: 'Music Business',
+  },
+  {
+    title: 'LeadGen Partners',
+    description: 'A results-driven business specializing in scaling online and local retail businesses through profit-based compensation models.',
+    icon: Target,
+    category: 'Business Growth',
   },
 ];
 
