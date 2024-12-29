@@ -1,4 +1,4 @@
-import { Building2, TrendingUp, Laptop, Megaphone, Shield, Music } from 'lucide-react';
+import { Building2, TrendingUp, Laptop, Megaphone, Shield, Music, Disc } from 'lucide-react';
 
 const ventures = [
   {
@@ -36,6 +36,12 @@ const ventures = [
     description: 'A forward-thinking music distribution platform offering comprehensive tech-driven solutions.',
     icon: Music,
     category: 'Music Technology',
+  },
+  {
+    title: 'Phase2 Music',
+    description: 'A music brokerage specializing in distribution deals, licensing agreements, and the buying and selling of catalogs and music rights.',
+    icon: Disc,
+    category: 'Music Business',
   },
 ];
 
