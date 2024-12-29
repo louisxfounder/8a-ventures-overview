@@ -22,24 +22,24 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-24 bg-background">
+    <section id="faq" className="py-32 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-24 animate-in">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-300 text-lg">
             Find answers to common questions about 8a Projects and our ventures.
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="animate-in">
+        <Accordion type="single" collapsible className="animate-in space-y-6">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left">
+            <AccordionItem key={index} value={`item-${index}`} className="border-border">
+              <AccordionTrigger className="text-left text-lg py-6">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-300">
+              <AccordionContent className="text-gray-300 text-lg leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
