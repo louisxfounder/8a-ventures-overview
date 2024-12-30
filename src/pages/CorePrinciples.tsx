@@ -13,10 +13,6 @@ const CorePrinciples = () => {
       content: "We keep teams and plans simple at first. This helps us move quickly, learn fast, and avoid taking on too much too soon."
     },
     {
-      title: "We Learn About the People We Serve",
-      content: "We take the time to understand what our customers (or investors) truly want. This helps us build solutions that work in real life."
-    },
-    {
       title: "We Use Plain Language",
       content: "We explain everything in a way anyone can understand. No fancy words, no hidden details—everyone should know what's going on and why."
     },
