@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const CorePrinciples = () => {
   const principles = [
@@ -41,59 +43,63 @@ const CorePrinciples = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        {/* Intro Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-2xl md:text-3xl font-bold mb-4">
-            Core Principles
-          </h1>
-          <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
-            Welcome to Our Core Principles. This page outlines the basic guidelines we follow in every business we build. Each principle keeps us focused on delivering real value, running a well-organized system, and growing at the right pace.
-          </p>
-        </motion.div>
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-background pt-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+          {/* Intro Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h1 className="text-2xl md:text-3xl font-bold mb-4">
+              Core Principles
+            </h1>
+            <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
+              Welcome to Our Core Principles. This page outlines the basic guidelines we follow in every business we build. Each principle keeps us focused on delivering real value, running a well-organized system, and growing at the right pace.
+            </p>
+          </motion.div>
 
-        {/* Principles Section */}
-        <div className="space-y-6">
-          {principles.map((principle, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-secondary rounded-lg p-4 hover:bg-secondary/80 transition-colors"
-            >
-              <h2 className="text-base md:text-lg font-semibold mb-2">
-                {principle.title}
-              </h2>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                {principle.content}
-              </p>
-            </motion.div>
-          ))}
+          {/* Principles Section */}
+          <div className="space-y-6">
+            {principles.map((principle, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-secondary rounded-lg p-4 hover:bg-secondary/80 transition-colors"
+              >
+                <h2 className="text-base md:text-lg font-semibold mb-2">
+                  {principle.title}
+                </h2>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {principle.content}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Closing Note */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            className="mt-12 bg-secondary/50 rounded-lg p-6"
+          >
+            <h2 className="text-lg md:text-xl font-bold mb-3">
+              Why These Principles Matter
+            </h2>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              By following these guidelines, we focus on real solutions, honest communication, smart financial steps, and reliable systems. Our aim is always to deliver steady, meaningful results that stand the test of time.
+            </p>
+          </motion.div>
         </div>
-
-        {/* Closing Note */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          className="mt-12 bg-secondary/50 rounded-lg p-6"
-        >
-          <h2 className="text-lg md:text-xl font-bold mb-3">
-            Why These Principles Matter
-          </h2>
-          <p className="text-sm text-gray-300 leading-relaxed">
-            By following these guidelines, we focus on real solutions, honest communication, smart financial steps, and reliable systems. Our aim is always to deliver steady, meaningful results that stand the test of time.
-          </p>
-        </motion.div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
