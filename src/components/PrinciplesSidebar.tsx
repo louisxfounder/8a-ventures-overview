@@ -23,9 +23,9 @@ export const PrinciplesSidebar = ({
   selectedPrinciple,
   onPrincipleSelect,
 }: PrinciplesSidebarProps) => {
-  // Log when principles or selected principle changes
   useEffect(() => {
-    console.log("Principles loaded:", principles);
+    console.log("PrinciplesSidebar mounted");
+    console.log("Principles:", principles);
     console.log("Selected principle:", selectedPrinciple);
   }, [principles, selectedPrinciple]);
 
@@ -44,7 +44,7 @@ export const PrinciplesSidebar = ({
                 <SidebarMenuItem key={principle.id}>
                   <SidebarMenuButton
                     onClick={() => {
-                      console.log("Principle selected:", principle.title);
+                      console.log("Principle clicked:", principle.title);
                       onPrincipleSelect(principle);
                     }}
                     isActive={selectedPrinciple.id === principle.id}

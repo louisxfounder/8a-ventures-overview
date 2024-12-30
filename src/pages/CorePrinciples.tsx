@@ -13,6 +13,7 @@ const CorePrinciples = () => {
   useEffect(() => {
     setIsMounted(true);
     console.log("CorePrinciples component mounted");
+    console.log("Initial principle:", principles[0]);
   }, []);
 
   const handlePrincipleSelect = (principle: PrincipleContent) => {
@@ -21,22 +22,26 @@ const CorePrinciples = () => {
   };
 
   if (!isMounted) {
+    console.log("Component not mounted yet");
     return null;
   }
+
+  console.log("Rendering CorePrinciples with principles:", principles);
+  console.log("Current selected principle:", selectedPrinciple);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-16">
-        <SidebarProvider defaultOpen={false}>
-          <div className="flex w-full">
+        <SidebarProvider>
+          <div className="flex w-full min-h-[calc(100vh-4rem)]">
             <PrinciplesSidebar
               principles={principles}
               selectedPrinciple={selectedPrinciple}
               onPrincipleSelect={handlePrincipleSelect}
             />
             
-            <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto min-h-[calc(100vh-4rem)]">
+            <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedPrinciple.id}
@@ -52,7 +57,6 @@ const CorePrinciples = () => {
                   <div className="prose prose-sm prose-gray max-w-none dark:prose-invert">
                     <div className="space-y-4 text-sm leading-relaxed">
                       {selectedPrinciple.content.split('\n\n').map((paragraph, index) => {
-                        // Handle bullet points
                         if (paragraph.startsWith('•')) {
                           return (
                             <ul key={index} className="list-disc pl-4 space-y-2">
@@ -64,7 +68,6 @@ const CorePrinciples = () => {
                             </ul>
                           );
                         }
-                        // Handle numbered lists
                         else if (/^\d+\./.test(paragraph)) {
                           return (
                             <ol key={index} className="list-decimal pl-4 space-y-2">
@@ -76,7 +79,6 @@ const CorePrinciples = () => {
                             </ol>
                           );
                         }
-                        // Handle headers
                         else if (paragraph.startsWith('#')) {
                           const level = paragraph.match(/^#+/)[0].length;
                           const text = paragraph.replace(/^#+\s*/, '');
@@ -90,7 +92,6 @@ const CorePrinciples = () => {
                             </HeaderTag>
                           );
                         }
-                        // Regular paragraphs
                         return (
                           <p key={index} className="text-sm text-muted-foreground">
                             {paragraph}
