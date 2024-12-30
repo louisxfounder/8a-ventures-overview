@@ -10,18 +10,14 @@ const CorePrinciples = () => {
   const [selectedPrinciple, setSelectedPrinciple] = useState<PrincipleContent>(principles[0]);
 
   const handlePrincipleSelect = (principle: PrincipleContent) => {
-    console.log('Selected principle:', principle);
     setSelectedPrinciple(principle);
   };
-
-  console.log('Current selected principle:', selectedPrinciple);
-  console.log('All principles:', principles);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-16">
-        <SidebarProvider defaultOpen={true}>
+        <SidebarProvider defaultOpen={false}>
           <div className="flex w-full">
             <PrinciplesSidebar
               principles={principles}
@@ -29,7 +25,7 @@ const CorePrinciples = () => {
               onPrincipleSelect={handlePrincipleSelect}
             />
             
-            <main className="flex-1 p-4 lg:p-8">
+            <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto min-h-[calc(100vh-4rem)]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedPrinciple.id}
@@ -39,18 +35,18 @@ const CorePrinciples = () => {
                   transition={{ duration: 0.2 }}
                   className="max-w-2xl mx-auto"
                 >
-                  <h1 className="text-xl font-medium mb-6 tracking-tight">
+                  <h1 className="text-lg md:text-xl font-medium mb-4 md:mb-6 tracking-tight">
                     {selectedPrinciple.title}
                   </h1>
                   <div className="prose prose-sm prose-gray max-w-none dark:prose-invert">
-                    <div className="space-y-6 text-sm leading-relaxed">
+                    <div className="space-y-4 md:space-y-6 text-sm leading-relaxed">
                       {selectedPrinciple.content.split('\n\n').map((paragraph, index) => {
                         // Handle bullet points
                         if (paragraph.startsWith('•')) {
                           return (
-                            <ul key={index} className="list-disc pl-4 space-y-2">
+                            <ul key={index} className="list-disc pl-4 md:pl-6 space-y-2">
                               {paragraph.split('\n').map((item, itemIndex) => (
-                                <li key={itemIndex} className="text-sm">
+                                <li key={itemIndex} className="text-sm text-muted-foreground">
                                   {item.replace('•', '').trim()}
                                 </li>
                               ))}
@@ -60,9 +56,9 @@ const CorePrinciples = () => {
                         // Handle numbered lists
                         else if (/^\d+\./.test(paragraph)) {
                           return (
-                            <ol key={index} className="list-decimal pl-4 space-y-2">
+                            <ol key={index} className="list-decimal pl-4 md:pl-6 space-y-2">
                               {paragraph.split('\n').map((item, itemIndex) => (
-                                <li key={itemIndex} className="text-sm">
+                                <li key={itemIndex} className="text-sm text-muted-foreground">
                                   {item.replace(/^\d+\.\s*/, '').trim()}
                                 </li>
                               ))}
@@ -75,7 +71,10 @@ const CorePrinciples = () => {
                           const text = paragraph.replace(/^#+\s*/, '');
                           const HeaderTag = `h${level}` as keyof JSX.IntrinsicElements;
                           return (
-                            <HeaderTag key={index} className={`text-${level === 1 ? 'lg' : 'base'} font-medium mt-6 mb-3`}>
+                            <HeaderTag 
+                              key={index} 
+                              className={`text-${level === 1 ? 'base md:lg' : 'sm md:base'} font-medium mt-4 md:mt-6 mb-2 md:mb-3`}
+                            >
                               {text}
                             </HeaderTag>
                           );
