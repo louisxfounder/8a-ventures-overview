@@ -152,16 +152,17 @@ const CorePrinciples = () => {
           <IntroSection />
           
           <div className="lg:grid lg:grid-cols-4 lg:gap-8">
-            {/* Sidebar */}
-            <div className="hidden lg:block">
-              <nav className="sticky top-24 space-y-2">
+            {/* Sidebar - Now always visible on mobile as well */}
+            <div className="mb-6 lg:mb-0">
+              <nav className="sticky top-24 space-y-1 bg-card rounded-lg p-4">
+                <h2 className="text-lg font-semibold mb-4 px-4">Core Principles</h2>
                 {principles.map((principle, index) => (
                   <button
                     key={index}
                     onClick={() => setActivePrinciple(index)}
-                    className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 ${
                       activePrinciple === index
-                        ? "bg-secondary text-white"
+                        ? "bg-secondary text-white font-medium"
                         : "text-gray-400 hover:text-white hover:bg-secondary/50"
                     }`}
                   >
