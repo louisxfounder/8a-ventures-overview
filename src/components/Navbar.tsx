@@ -26,6 +26,12 @@ const Navbar = () => {
             >
               Home
             </Link>
+            <Link 
+              to="/core-principles" 
+              className={`text-sm transition-colors ${isActive('/core-principles') ? 'text-white' : 'text-gray-300 hover:text-white'}`}
+            >
+              Core Principles
+            </Link>
             <a href="#portfolio" className="text-sm text-gray-300 hover:text-white transition-colors">Portfolio</a>
             <a href="#faq" className="text-sm text-gray-300 hover:text-white transition-colors">FAQ</a>
           </div>
@@ -54,6 +60,15 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Home
+            </Link>
+            <Link
+              to="/core-principles"
+              className={`block px-3 py-2 text-base rounded-md ${
+                isActive('/core-principles') ? 'bg-secondary text-white' : 'text-gray-300 hover:bg-secondary hover:text-white'
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              Core Principles
             </Link>
             <a
               href="#portfolio"
