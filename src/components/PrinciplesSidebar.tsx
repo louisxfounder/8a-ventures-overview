@@ -61,13 +61,13 @@ export const PrinciplesSidebar = ({
         <SidebarContent className="h-full">
           <SidebarGroup className="h-full">
             <SidebarGroupContent className="w-full py-4">
-              <SidebarMenu className="max-h-[calc(100vh-8rem)] overflow-y-auto px-2 flex flex-col">
+              <SidebarMenu className="max-h-[calc(100vh-8rem)] overflow-y-auto px-4 flex flex-col">
                 {principles.map((principle) => (
                   <SidebarMenuItem key={principle.id}>
                     <SidebarMenuButton
                       onClick={() => handlePrincipleClick(principle)}
                       isActive={selectedPrinciple.id === principle.id}
-                      className="text-sm py-2 w-full hover:bg-accent transition-colors"
+                      className="text-sm py-2 w-full hover:bg-accent transition-colors rounded-md px-3"
                     >
                       <span className="truncate">{principle.title}</span>
                     </SidebarMenuButton>
