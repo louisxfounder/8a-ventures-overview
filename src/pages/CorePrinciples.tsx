@@ -84,13 +84,13 @@ const CorePrinciples = () => {
               <SidebarContent className="px-2">
                 <SidebarGroup>
                   <SidebarGroupContent>
-                    <SidebarMenu>
+                    <SidebarMenu className="overflow-y-auto max-h-[calc(100vh-6rem)]">
                       {principles.map((principle) => (
                         <SidebarMenuItem key={principle.id}>
                           <SidebarMenuButton
                             onClick={() => setSelectedPrinciple(principle)}
                             isActive={selectedPrinciple.id === principle.id}
-                            className="text-sm py-2"
+                            className="text-sm py-2 w-full"
                           >
                             <span>{principle.title}</span>
                           </SidebarMenuButton>
