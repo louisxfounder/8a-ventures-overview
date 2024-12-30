@@ -9,6 +9,11 @@ import type { PrincipleContent } from "@/data/principles";
 const CorePrinciples = () => {
   const [selectedPrinciple, setSelectedPrinciple] = useState<PrincipleContent>(principles[0]);
 
+  const handlePrincipleSelect = (principle: PrincipleContent) => {
+    console.log('Selected principle:', principle); // Debug log
+    setSelectedPrinciple(principle);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -18,7 +23,7 @@ const CorePrinciples = () => {
             <PrinciplesSidebar
               principles={principles}
               selectedPrinciple={selectedPrinciple}
-              onPrincipleSelect={setSelectedPrinciple}
+              onPrincipleSelect={handlePrincipleSelect}
             />
             
             <main className="flex-1 p-8 lg:p-12">
@@ -34,9 +39,9 @@ const CorePrinciples = () => {
                   <h1 className="text-2xl font-medium mb-8 tracking-tight">
                     {selectedPrinciple.title}
                   </h1>
-                  <p className="text-base leading-relaxed text-muted-foreground font-light whitespace-pre-line">
+                  <div className="text-base leading-relaxed text-muted-foreground font-light whitespace-pre-line">
                     {selectedPrinciple.content}
-                  </p>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </main>
