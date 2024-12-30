@@ -61,7 +61,7 @@ export const PrinciplesSidebar = ({
         <SidebarContent className="h-full">
           <SidebarGroup className="h-full">
             <SidebarGroupContent className="w-full py-4">
-              <SidebarMenu className="max-h-[calc(100vh-8rem)] overflow-y-auto px-4 flex flex-col">
+              <SidebarMenu className="max-h-[calc(100vh-8rem)] overflow-y-auto px-4 flex flex-col mt-16 md:mt-0">
                 {principles.map((principle) => (
                   <SidebarMenuItem key={principle.id}>
                     <SidebarMenuButton
