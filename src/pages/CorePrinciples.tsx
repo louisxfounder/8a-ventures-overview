@@ -83,7 +83,7 @@ const CorePrinciples = () => {
             <Sidebar>
               <SidebarContent>
                 <SidebarGroup className="h-[calc(100vh-4rem)] flex items-center">
-                  <SidebarGroupContent className="w-full py-12">
+                  <SidebarGroupContent className="w-full py-24">
                     <SidebarMenu className="max-h-full overflow-y-auto px-2 flex flex-col">
                       {principles.map((principle) => (
                         <SidebarMenuItem key={principle.id}>
