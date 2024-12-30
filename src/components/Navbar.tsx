@@ -1,14 +1,43 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => {
     return location.pathname === path;
   };
+
+  const handleSectionClick = (sectionId: string) => {
+    console.log('Handling section click:', sectionId);
+    if (location.pathname !== '/') {
+      console.log('Not on home page, navigating...');
+      navigate('/', { state: { scrollTo: sectionId } });
+    } else {
+      console.log('On home page, scrolling...');
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsOpen(false);
+  };
+
+  // Handle navigation with scroll when coming from another page
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      console.log('Scrolling to section:', location.state.scrollTo);
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      // Clear the state to prevent scrolling on subsequent renders
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
 
   return (
     <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50 border-b border-border">
@@ -32,8 +61,18 @@ const Navbar = () => {
             >
               Core Principles
             </Link>
-            <a href="#portfolio" className="text-sm text-gray-300 hover:text-white transition-colors">Portfolio</a>
-            <a href="#faq" className="text-sm text-gray-300 hover:text-white transition-colors">FAQ</a>
+            <button 
+              onClick={() => handleSectionClick('portfolio')}
+              className="text-sm text-gray-300 hover:text-white transition-colors"
+            >
+              Portfolio
+            </button>
+            <button 
+              onClick={() => handleSectionClick('faq')}
+              className="text-sm text-gray-300 hover:text-white transition-colors"
+            >
+              FAQ
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -70,20 +109,18 @@ const Navbar = () => {
             >
               Core Principles
             </Link>
-            <a
-              href="#portfolio"
-              className="block px-3 py-2 text-base text-gray-300 hover:bg-secondary hover:text-white rounded-md"
-              onClick={() => setIsOpen(false)}
+            <button
+              onClick={() => handleSectionClick('portfolio')}
+              className="w-full text-left px-3 py-2 text-base text-gray-300 hover:bg-secondary hover:text-white rounded-md"
             >
               Portfolio
-            </a>
-            <a
-              href="#faq"
-              className="block px-3 py-2 text-base text-gray-300 hover:bg-secondary hover:text-white rounded-md"
-              onClick={() => setIsOpen(false)}
+            </button>
+            <button
+              onClick={() => handleSectionClick('faq')}
+              className="w-full text-left px-3 py-2 text-base text-gray-300 hover:bg-secondary hover:text-white rounded-md"
             >
               FAQ
-            </a>
+            </button>
           </div>
         </div>
       )}
