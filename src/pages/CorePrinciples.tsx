@@ -68,17 +68,6 @@ const CorePrinciples = () => {
                             </ul>
                           );
                         }
-                        else if (/^\d+\./.test(paragraph)) {
-                          return (
-                            <ol key={index} className="list-decimal pl-4 space-y-2">
-                              {paragraph.split('\n').map((item, itemIndex) => (
-                                <li key={itemIndex} className="text-sm text-muted-foreground">
-                                  {item.replace(/^\d+\.\s*/, '').trim()}
-                                </li>
-                              ))}
-                            </ol>
-                          );
-                        }
                         else if (paragraph.startsWith('#')) {
                           const level = paragraph.match(/^#+/)[0].length;
                           const text = paragraph.replace(/^#+\s*/, '');
