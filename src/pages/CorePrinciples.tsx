@@ -30,14 +30,14 @@ Why These Principles Matter
 By following these guidelines, we focus on real solutions, honest communication, smart financial steps, and reliable systems. Our aim is always to deliver steady, meaningful results that stand the test of time.`
   },
   {
-    id: "start-small",
-    title: "Start Small",
-    content: "We keep teams and plans simple at first. This helps us move quickly, learn fast, and avoid taking on too much too soon."
-  },
-  {
     id: "fix-problems",
     title: "Fix Problems",
     content: "We only start a business if it solves a clear and genuine need. If there's no real need, there's no reason to begin."
+  },
+  {
+    id: "start-small",
+    title: "Start Small",
+    content: "We keep teams and plans simple at first. This helps us move quickly, learn fast, and avoid taking on too much too soon."
   },
   {
     id: "plain-language",
