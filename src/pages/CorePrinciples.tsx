@@ -10,7 +10,7 @@ const CorePrinciples = () => {
   const [selectedPrinciple, setSelectedPrinciple] = useState<PrincipleContent>(principles[0]);
 
   const handlePrincipleSelect = (principle: PrincipleContent) => {
-    console.log('Selected principle:', principle); // Debug log
+    console.log('Selected principle:', principle);
     setSelectedPrinciple(principle);
   };
 
