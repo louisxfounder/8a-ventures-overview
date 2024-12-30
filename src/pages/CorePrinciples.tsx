@@ -14,11 +14,14 @@ const CorePrinciples = () => {
     setSelectedPrinciple(principle);
   };
 
+  console.log('Current selected principle:', selectedPrinciple);
+  console.log('All principles:', principles);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-16">
-        <SidebarProvider defaultOpen={false}>
+        <SidebarProvider defaultOpen={true}>
           <div className="flex w-full">
             <PrinciplesSidebar
               principles={principles}
@@ -26,7 +29,7 @@ const CorePrinciples = () => {
               onPrincipleSelect={handlePrincipleSelect}
             />
             
-            <main className="flex-1 p-4 md:p-8 lg:p-12">
+            <main className="flex-1 p-8 lg:p-12">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedPrinciple.id}
@@ -36,10 +39,10 @@ const CorePrinciples = () => {
                   transition={{ duration: 0.2 }}
                   className="max-w-2xl mx-auto"
                 >
-                  <h1 className="text-xl md:text-2xl font-medium mb-6 md:mb-8 tracking-tight">
+                  <h1 className="text-2xl font-medium mb-8 tracking-tight">
                     {selectedPrinciple.title}
                   </h1>
-                  <div className="prose prose-sm md:prose-base prose-gray max-w-none">
+                  <div className="prose prose-sm prose-gray max-w-none">
                     {selectedPrinciple.content}
                   </div>
                 </motion.div>
