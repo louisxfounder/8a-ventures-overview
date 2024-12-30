@@ -11,10 +11,10 @@ export type { PrincipleContent };
 
 export const principles: PrincipleContent[] = [
   overviewPrinciple,
-  businessAsSystemPrinciple,
   fixProblemsPrinciple,
   startSmallPrinciple,
   plainLanguagePrinciple,
   doWhatYouSayPrinciple,
-  ...otherPrinciples
+  ...otherPrinciples,
+  businessAsSystemPrinciple
 ];
