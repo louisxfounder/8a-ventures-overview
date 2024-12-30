@@ -63,7 +63,7 @@
     @apply text-sm leading-relaxed mb-3 text-muted-foreground;
   }
 
-  .prose ul, .prose ol {
+  .prose ul {
     @apply my-2 space-y-1;
   }
 
@@ -72,15 +72,7 @@
   }
 
   .prose ul > li {
-    @apply relative pl-5 before:absolute before:left-1 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-muted-foreground/50;
-  }
-
-  .prose ol {
-    @apply list-decimal pl-5;
-  }
-
-  .prose ol > li {
-    @apply pl-1;
+    @apply relative pl-5 before:absolute before:left-1 before:top-[0.6em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-muted-foreground/50;
   }
 }
 

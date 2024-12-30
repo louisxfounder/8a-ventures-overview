@@ -3,50 +3,50 @@ import { PrincipleContent } from './types';
 export const growAtRightPacePrinciple: PrincipleContent = {
   id: "grow-at-right-pace",
   title: "Grow at the Right Pace",
-  content: `# We Grow at the Right Pace
+  content: `We Grow at the Right Pace
 
 We expand only when we're sure our system can handle it without lowering our quality. Steady, manageable growth beats rushing and risking chaos.
 
-## 1. Growth Only Works If Operations Can Handle It
+Marketing & Operations Balance:
 
-### Marketing & Operations Must Match
-- If marketing brings in more customers than the business can serve, quality drops and everyone is stressed.
-- If you invest too much in operations without enough customers, you waste money on idle resources.
+• Marketing success must match operational capacity
+• Too many customers without proper support leads to quality drops
+• Too much operational investment without customers wastes resources
+• Growth needs to be sustainable and manageable
 
-## 2. Use Metrics to Track Balance
+Measuring Growth:
 
-### Measuring Capacity
-- Ask: "If we invest X dollars in marketing, how many new customers will likely arrive?"
-- Then see if the operations team can handle that many orders, calls, or deliveries.
+• Track marketing spend versus new customer acquisition
+• Monitor operational capacity and team workload
+• Watch for signs of strain or inefficiency
+• Assess resource utilization regularly
 
-### Scaling Scenarios
-- Doubling or tripling marketing spend means doubling or tripling service needs.
-- Check if you have enough staff, tools, or time to handle the increase smoothly.
+Growth Strategy:
 
-## 3. Step-by-Step Expansion
+• Increase spending or capacity in small, measured steps
+• Monitor impact before scaling further
+• Avoid overwhelming the team or systems
+• Keep quality consistent as you expand
 
-### Incremental Growth
-- Increase spending or operational capacity in small steps.
-- Watch for signs of strain (delays, missed details, overwhelmed staff) before going bigger.
+Maintaining Balance:
 
-### Avoid "Fire Drills"
-- When growth is too fast, the team is always scrambling; errors multiply, and customers lose trust.
-- Pacing growth avoids the constant panic of being unable to keep up.
+• Sync growth with customer demand
+• Match operational readiness with expansion
+• Align available capital with growth plans
+• Prevent burnout and maintain service quality
 
-## 4. Keeping Peace of Mind
+Warning Signs to Watch:
 
-### Balanced Growth
-- Growing in sync with customer demand, operational readiness, and available capital prevents burnout or underuse of resources.
+• Constant scrambling to keep up
+• Increasing error rates
+• Team exhaustion
+• Customer complaints
+• Declining service quality
 
-### Smooth Transitions
-- Teams and customers alike benefit from controlled scaling—service stays consistent, and employees maintain a manageable workload.
-
-## In Short
-
-"We Grow at the Right Pace" means we:
-1. Match marketing success with operational capacity—ensuring we don't push one beyond the other.
-2. Use clear metrics to decide when and how much to scale.
-3. Expand steadily, maintaining quality and avoiding chaos.
-
-By balancing new customer intake with the ability to serve them well, we protect both our peace of mind and our reputation for reliability.`
+In Short:
+• Match marketing with operational capacity
+• Use clear metrics to guide growth
+• Expand steadily and sustainably
+• Maintain quality throughout growth
+• Protect team wellbeing and customer satisfaction`
 };
