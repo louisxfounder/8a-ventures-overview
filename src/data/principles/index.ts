@@ -6,6 +6,7 @@ import { plainLanguagePrinciple } from './plain-language';
 import { doWhatYouSayPrinciple } from './do-what-you-say';
 import { businessAsSystemPrinciple } from './business-as-system';
 import { growAtRightPacePrinciple } from './grow-at-right-pace';
+import { timelessRelationshipsPrinciple } from './timeless-relationships';
 import { otherPrinciples } from './other-principles';
 
 export type { PrincipleContent };
@@ -18,5 +19,6 @@ export const principles: PrincipleContent[] = [
   doWhatYouSayPrinciple,
   ...otherPrinciples,
   businessAsSystemPrinciple,
-  growAtRightPacePrinciple
+  growAtRightPacePrinciple,
+  timelessRelationshipsPrinciple
 ];
