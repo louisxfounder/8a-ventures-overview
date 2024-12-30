@@ -14,6 +14,9 @@ const CorePrinciples = () => {
     setSelectedPrinciple(principle);
   };
 
+  console.log('Current selected principle:', selectedPrinciple);
+  console.log('All principles:', principles);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -39,7 +42,7 @@ const CorePrinciples = () => {
                   <h1 className="text-2xl font-medium mb-8 tracking-tight">
                     {selectedPrinciple.title}
                   </h1>
-                  <div className="text-base leading-relaxed text-muted-foreground font-light whitespace-pre-line">
+                  <div className="prose prose-sm prose-gray max-w-none">
                     {selectedPrinciple.content}
                   </div>
                 </motion.div>
