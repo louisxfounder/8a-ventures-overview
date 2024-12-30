@@ -41,7 +41,7 @@ const CorePrinciples = () => {
               onPrincipleSelect={handlePrincipleSelect}
             />
             
-            <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto">
+            <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto mt-16 md:mt-8">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedPrinciple.id}
