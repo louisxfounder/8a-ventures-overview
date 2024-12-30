@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   Sidebar, 
   SidebarContent, 
@@ -6,9 +7,9 @@ import {
   SidebarGroupContent,
   SidebarMenu, 
   SidebarMenuItem, 
-  SidebarMenuButton 
+  SidebarMenuButton,
+  SidebarProvider
 } from "@/components/ui/sidebar";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface PrincipleContent {
   id: string;
@@ -70,44 +71,46 @@ const CorePrinciples = () => {
   return (
     <div className="flex min-h-screen pt-16 bg-background">
       <SidebarProvider defaultOpen={true}>
-        <Sidebar>
-          <SidebarContent>
-            <SidebarGroup>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {principles.map((principle) => (
-                    <SidebarMenuItem key={principle.id}>
-                      <SidebarMenuButton
-                        onClick={() => setSelectedPrinciple(principle)}
-                        isActive={selectedPrinciple.id === principle.id}
-                      >
-                        <span>{principle.title}</span>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          </SidebarContent>
-        </Sidebar>
-        
-        <main className="flex-1 p-6">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedPrinciple.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
-              className="max-w-3xl mx-auto"
-            >
-              <h1 className="text-3xl font-bold mb-6">{selectedPrinciple.title}</h1>
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                {selectedPrinciple.content}
-              </p>
-            </motion.div>
-          </AnimatePresence>
-        </main>
+        <div className="flex w-full">
+          <Sidebar>
+            <SidebarContent>
+              <SidebarGroup>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {principles.map((principle) => (
+                      <SidebarMenuItem key={principle.id}>
+                        <SidebarMenuButton
+                          onClick={() => setSelectedPrinciple(principle)}
+                          isActive={selectedPrinciple.id === principle.id}
+                        >
+                          <span>{principle.title}</span>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </SidebarGroup>
+            </SidebarContent>
+          </Sidebar>
+          
+          <main className="flex-1 p-6">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedPrinciple.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.2 }}
+                className="max-w-3xl mx-auto"
+              >
+                <h1 className="text-3xl font-bold mb-6">{selectedPrinciple.title}</h1>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  {selectedPrinciple.content}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </main>
+        </div>
       </SidebarProvider>
     </div>
   );
