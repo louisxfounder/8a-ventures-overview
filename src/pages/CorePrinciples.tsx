@@ -77,14 +77,14 @@ const CorePrinciples = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-20">
+      <div className="pt-16">
         <SidebarProvider defaultOpen={true}>
           <div className="flex w-full">
             <Sidebar>
-              <SidebarContent className="px-2">
+              <SidebarContent>
                 <SidebarGroup>
                   <SidebarGroupContent>
-                    <SidebarMenu className="h-[calc(100vh-8rem)] overflow-y-auto">
+                    <SidebarMenu className="max-h-[calc(100vh-5rem)] overflow-y-auto px-2">
                       {principles.map((principle) => (
                         <SidebarMenuItem key={principle.id}>
                           <SidebarMenuButton
