@@ -10,6 +10,7 @@ import {
   SidebarMenuButton,
   SidebarProvider
 } from "@/components/ui/sidebar";
+import Navbar from "@/components/Navbar";
 
 interface PrincipleContent {
   id: string;
@@ -69,49 +70,52 @@ const CorePrinciples = () => {
   const [selectedPrinciple, setSelectedPrinciple] = useState<PrincipleContent>(principles[0]);
 
   return (
-    <div className="flex min-h-screen pt-16 bg-background">
-      <SidebarProvider defaultOpen={true}>
-        <div className="flex w-full">
-          <Sidebar>
-            <SidebarContent>
-              <SidebarGroup>
-                <SidebarGroupContent>
-                  <SidebarMenu>
-                    {principles.map((principle) => (
-                      <SidebarMenuItem key={principle.id}>
-                        <SidebarMenuButton
-                          onClick={() => setSelectedPrinciple(principle)}
-                          isActive={selectedPrinciple.id === principle.id}
-                        >
-                          <span>{principle.title}</span>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
-                  </SidebarMenu>
-                </SidebarGroupContent>
-              </SidebarGroup>
-            </SidebarContent>
-          </Sidebar>
-          
-          <main className="flex-1 p-6">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedPrinciple.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.2 }}
-                className="max-w-3xl mx-auto"
-              >
-                <h1 className="text-3xl font-bold mb-6">{selectedPrinciple.title}</h1>
-                <p className="text-lg leading-relaxed text-muted-foreground">
-                  {selectedPrinciple.content}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </main>
-        </div>
-      </SidebarProvider>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <div className="pt-16"> {/* Add padding top to account for fixed navbar */}
+        <SidebarProvider defaultOpen={true}>
+          <div className="flex w-full">
+            <Sidebar>
+              <SidebarContent>
+                <SidebarGroup>
+                  <SidebarGroupContent>
+                    <SidebarMenu>
+                      {principles.map((principle) => (
+                        <SidebarMenuItem key={principle.id}>
+                          <SidebarMenuButton
+                            onClick={() => setSelectedPrinciple(principle)}
+                            isActive={selectedPrinciple.id === principle.id}
+                          >
+                            <span>{principle.title}</span>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      ))}
+                    </SidebarMenu>
+                  </SidebarGroupContent>
+                </SidebarGroup>
+              </SidebarContent>
+            </Sidebar>
+            
+            <main className="flex-1 p-6">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedPrinciple.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.2 }}
+                  className="max-w-3xl mx-auto"
+                >
+                  <h1 className="text-3xl font-bold mb-6">{selectedPrinciple.title}</h1>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    {selectedPrinciple.content}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </main>
+          </div>
+        </SidebarProvider>
+      </div>
     </div>
   );
 };
