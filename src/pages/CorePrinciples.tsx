@@ -22,7 +22,12 @@ const principles: PrincipleContent[] = [
   {
     id: "overview",
     title: "Principles Overview",
-    content: "Welcome to Our Core Principles. This page outlines the basic guidelines we follow in every business we build."
+    content: `Welcome to Our Core Principles. This page outlines the basic guidelines we follow in every business we build. Each principle keeps us focused on delivering real value, running a well-organized system, and growing at the right pace.
+
+We only start a business if it solves a clear and genuine need. If there's no real need, there's no reason to begin.
+
+Why These Principles Matter
+By following these guidelines, we focus on real solutions, honest communication, smart financial steps, and reliable systems. Our aim is always to deliver steady, meaningful results that stand the test of time.`
   },
   {
     id: "fix-problems",
@@ -72,11 +77,11 @@ const CorePrinciples = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-20"> {/* Increased padding top for more space */}
+      <div className="pt-20">
         <SidebarProvider defaultOpen={true}>
           <div className="flex w-full">
             <Sidebar>
-              <SidebarContent className="px-2"> {/* Added padding to sidebar content */}
+              <SidebarContent className="px-2">
                 <SidebarGroup>
                   <SidebarGroupContent>
                     <SidebarMenu>
@@ -85,7 +90,7 @@ const CorePrinciples = () => {
                           <SidebarMenuButton
                             onClick={() => setSelectedPrinciple(principle)}
                             isActive={selectedPrinciple.id === principle.id}
-                            className="text-sm py-2" /* Smaller font and more vertical padding */
+                            className="text-sm py-2"
                           >
                             <span>{principle.title}</span>
                           </SidebarMenuButton>
@@ -97,7 +102,7 @@ const CorePrinciples = () => {
               </SidebarContent>
             </Sidebar>
             
-            <main className="flex-1 p-8 lg:p-12"> {/* Increased padding for content area */}
+            <main className="flex-1 p-8 lg:p-12">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedPrinciple.id}
@@ -105,12 +110,12 @@ const CorePrinciples = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.2 }}
-                  className="max-w-2xl mx-auto" /* Reduced max width for better readability */
+                  className="max-w-2xl mx-auto"
                 >
                   <h1 className="text-2xl font-medium mb-8 tracking-tight">
                     {selectedPrinciple.title}
                   </h1>
-                  <p className="text-base leading-relaxed text-muted-foreground font-light">
+                  <p className="text-base leading-relaxed text-muted-foreground font-light whitespace-pre-line">
                     {selectedPrinciple.content}
                   </p>
                 </motion.div>
