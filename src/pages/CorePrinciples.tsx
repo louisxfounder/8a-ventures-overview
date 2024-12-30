@@ -82,9 +82,9 @@ const CorePrinciples = () => {
           <div className="flex w-full">
             <Sidebar>
               <SidebarContent>
-                <SidebarGroup>
-                  <SidebarGroupContent>
-                    <SidebarMenu className="max-h-[calc(100vh-5rem)] overflow-y-auto px-2">
+                <SidebarGroup className="h-[calc(100vh-4rem)] flex items-center">
+                  <SidebarGroupContent className="w-full py-4">
+                    <SidebarMenu className="max-h-full overflow-y-auto px-2 flex flex-col">
                       {principles.map((principle) => (
                         <SidebarMenuItem key={principle.id}>
                           <SidebarMenuButton
