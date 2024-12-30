@@ -53,28 +53,28 @@ const ventures = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-32 bg-background">
+    <section id="portfolio" className="py-16 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-24 animate-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Portfolio</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+        <div className="text-center mb-16 md:mb-24 animate-in">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Our Portfolio</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
             Each venture operates independently with its own management, objectives, and processes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
           {ventures.map((venture, index) => (
             <div
               key={venture.title}
-              className="bg-secondary p-8 rounded-lg border border-border hover:border-gray-700 transition-colors animate-in"
+              className="bg-secondary p-6 md:p-8 rounded-lg border border-border hover:border-gray-700 transition-colors animate-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex items-center mb-6">
-                <venture.icon className="w-8 h-8 mr-4" />
-                <span className="text-sm text-gray-400">{venture.category}</span>
+              <div className="flex items-center mb-4 md:mb-6">
+                <venture.icon className="w-6 h-6 md:w-8 md:h-8 mr-3 md:mr-4" />
+                <span className="text-xs md:text-sm text-gray-400">{venture.category}</span>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">{venture.title}</h3>
-              <p className="text-gray-300 text-lg leading-relaxed">{venture.description}</p>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">{venture.title}</h3>
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed">{venture.description}</p>
             </div>
           ))}
         </div>
