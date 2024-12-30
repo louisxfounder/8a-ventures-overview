@@ -72,11 +72,11 @@ const CorePrinciples = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-16"> {/* Add padding top to account for fixed navbar */}
+      <div className="pt-20"> {/* Increased padding top for more space */}
         <SidebarProvider defaultOpen={true}>
           <div className="flex w-full">
             <Sidebar>
-              <SidebarContent>
+              <SidebarContent className="px-2"> {/* Added padding to sidebar content */}
                 <SidebarGroup>
                   <SidebarGroupContent>
                     <SidebarMenu>
@@ -85,6 +85,7 @@ const CorePrinciples = () => {
                           <SidebarMenuButton
                             onClick={() => setSelectedPrinciple(principle)}
                             isActive={selectedPrinciple.id === principle.id}
+                            className="text-sm py-2" /* Smaller font and more vertical padding */
                           >
                             <span>{principle.title}</span>
                           </SidebarMenuButton>
@@ -96,7 +97,7 @@ const CorePrinciples = () => {
               </SidebarContent>
             </Sidebar>
             
-            <main className="flex-1 p-6">
+            <main className="flex-1 p-8 lg:p-12"> {/* Increased padding for content area */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedPrinciple.id}
@@ -104,10 +105,12 @@ const CorePrinciples = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.2 }}
-                  className="max-w-3xl mx-auto"
+                  className="max-w-2xl mx-auto" /* Reduced max width for better readability */
                 >
-                  <h1 className="text-3xl font-bold mb-6">{selectedPrinciple.title}</h1>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
+                  <h1 className="text-2xl font-medium mb-8 tracking-tight">
+                    {selectedPrinciple.title}
+                  </h1>
+                  <p className="text-base leading-relaxed text-muted-foreground font-light">
                     {selectedPrinciple.content}
                   </p>
                 </motion.div>
