@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import IntroSection from "../components/core-principles/IntroSection";
 import PrincipleCard from "../components/core-principles/PrincipleCard";
 import ClosingNote from "../components/core-principles/ClosingNote";
+import { SidebarProvider, Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent } from "@/components/ui/sidebar";
 
 const CorePrinciples = () => {
   const [activePrinciple, setActivePrinciple] = useState(0);
@@ -147,33 +148,38 @@ const CorePrinciples = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-background pt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <IntroSection />
-          
-          <div className="lg:grid lg:grid-cols-4 lg:gap-8">
-            {/* Sidebar - Now always visible on mobile as well */}
-            <div className="mb-6 lg:mb-0">
-              <nav className="sticky top-24 space-y-1 bg-card rounded-lg p-4">
-                <h2 className="text-lg font-semibold mb-4 px-4">Core Principles</h2>
-                {principles.map((principle, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActivePrinciple(index)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 ${
-                      activePrinciple === index
-                        ? "bg-secondary text-white font-medium"
-                        : "text-gray-400 hover:text-white hover:bg-secondary/50"
-                    }`}
-                  >
-                    {principle.title}
-                  </button>
-                ))}
-              </nav>
-            </div>
+      <SidebarProvider>
+        <div className="min-h-screen flex w-full bg-background">
+          <Sidebar>
+            <SidebarContent>
+              <SidebarGroup>
+                <SidebarGroupContent>
+                  <div className="flex flex-col space-y-1 p-4">
+                    <h2 className="text-lg font-semibold mb-4">Core Principles</h2>
+                    {principles.map((principle, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActivePrinciple(index)}
+                        className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 ${
+                          activePrinciple === index
+                            ? "bg-secondary text-white font-medium"
+                            : "text-gray-400 hover:text-white hover:bg-secondary/50"
+                        }`}
+                      >
+                        {principle.title}
+                      </button>
+                    ))}
+                  </div>
+                </SidebarGroupContent>
+              </SidebarGroup>
+            </SidebarContent>
+          </Sidebar>
 
-            {/* Main Content */}
-            <div className="lg:col-span-3 space-y-6">
+          {/* Main Content */}
+          <div className="flex-1 px-4 py-8 lg:px-8">
+            <IntroSection />
+            
+            <div className="mt-8">
               <PrincipleCard
                 title={principles[activePrinciple].title}
                 summary={principles[activePrinciple].summary}
@@ -185,7 +191,7 @@ const CorePrinciples = () => {
             </div>
           </div>
         </div>
-      </div>
+      </SidebarProvider>
       <Footer />
     </>
   );
