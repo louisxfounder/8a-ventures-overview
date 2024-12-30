@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import IntroSection from "../components/core-principles/IntroSection";
 import PrincipleCard from "../components/core-principles/PrincipleCard";
+import ClosingNote from "../components/core-principles/ClosingNote";
 
 const CorePrinciples = () => {
   const [activePrinciple, setActivePrinciple] = useState(0);
@@ -9,7 +11,7 @@ const CorePrinciples = () => {
   const principles = [
     {
       title: "We Fix Real Problems",
-      summary: "We only start a business if it solves a clear and genuine need.",
+      summary: "We only start a business if it solves a clear and genuine need. If there's no real need, there's no reason to begin.",
       details: (
         <div className="space-y-6">
           <section>
@@ -50,7 +52,7 @@ const CorePrinciples = () => {
     },
     {
       title: "We Start Small",
-      summary: "We keep teams and plans simple at first to move quickly and learn fast.",
+      summary: "We keep teams and plans simple at first. This helps us move quickly, learn fast, and avoid taking on too much too soon.",
       details: (
         <div className="space-y-6">
           <section>
@@ -85,6 +87,60 @@ const CorePrinciples = () => {
           </section>
         </div>
       )
+    },
+    {
+      title: "We Use Plain Language",
+      summary: "We explain everything in a way anyone can understand. No fancy words, no hidden details—everyone should know what's going on and why.",
+      details: (
+        <div className="space-y-4">
+          <p>We believe in clear, straightforward communication that everyone can understand.</p>
+        </div>
+      )
+    },
+    {
+      title: "We Build Trust by Doing What We Say",
+      summary: "We stay honest, stick to our promises, and show real examples of our work. Trust grows when actions match words.",
+      details: (
+        <div className="space-y-4">
+          <p>Our actions consistently align with our words to build lasting trust.</p>
+        </div>
+      )
+    },
+    {
+      title: "We Plan Our Money Carefully",
+      summary: "We keep track of how much we invest, how much we expect to earn, and how quickly this might happen.",
+      details: (
+        <div className="space-y-4">
+          <p>Financial planning and careful tracking are essential parts of our business approach.</p>
+        </div>
+      )
+    },
+    {
+      title: "We Treat Each Business as a System",
+      summary: "We set up each venture like an assembly line—clear steps for sales, product delivery or service, customer support, and administrative tasks.",
+      details: (
+        <div className="space-y-4">
+          <p>Every business is structured as a well-organized system with clear processes.</p>
+        </div>
+      )
+    },
+    {
+      title: "We Grow at the Right Pace",
+      summary: "We expand only when we're sure our system can handle it without lowering our quality.",
+      details: (
+        <div className="space-y-4">
+          <p>Sustainable growth is prioritized over rapid expansion to maintain quality.</p>
+        </div>
+      )
+    },
+    {
+      title: "We Aim for Long-Lasting Improvements",
+      summary: "Our goal is to make a positive, lasting difference in people's lives.",
+      details: (
+        <div className="space-y-4">
+          <p>We focus on creating sustainable, meaningful impact through our work.</p>
+        </div>
+      )
     }
   ];
 
@@ -93,6 +149,8 @@ const CorePrinciples = () => {
       <Navbar />
       <div className="min-h-screen bg-background pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <IntroSection />
+          
           <div className="lg:grid lg:grid-cols-4 lg:gap-8">
             {/* Sidebar */}
             <div className="hidden lg:block">
@@ -115,16 +173,14 @@ const CorePrinciples = () => {
 
             {/* Main Content */}
             <div className="lg:col-span-3 space-y-6">
-              {principles.map((principle, index) => (
-                <PrincipleCard
-                  key={index}
-                  title={principle.title}
-                  summary={principle.summary}
-                  details={principle.details}
-                  isActive={activePrinciple === index}
-                  onClick={() => setActivePrinciple(index)}
-                />
-              ))}
+              <PrincipleCard
+                title={principles[activePrinciple].title}
+                summary={principles[activePrinciple].summary}
+                details={principles[activePrinciple].details}
+                isActive={true}
+                onClick={() => {}}
+              />
+              <ClosingNote />
             </div>
           </div>
         </div>
