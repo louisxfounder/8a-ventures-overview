@@ -32,7 +32,106 @@ By following these guidelines, we focus on real solutions, honest communication,
   {
     id: "fix-problems",
     title: "Fix Problems",
-    content: "We only start a business if it solves a clear and genuine need. If there's no real need, there's no reason to begin."
+    content: `We only start a business if it solves a clear and genuine need. If there's no real need, there's no reason to begin.
+
+Understanding External vs. Internal Problems
+
+When people seek out a product or service, they usually start with an external problem—something obvious and surface-level, like:
+• "My photos aren't safely stored."
+• "I'm not losing weight despite my efforts."
+• "I can't find a good daycare."
+
+But the real trigger that makes them actually buy comes from their internal problem—the feeling behind that external need. It might be anxiety ("What if someone sees my private photos?"), shame ("I feel embarrassed about my weight"), or worry ("Am I failing my child by not finding good daycare?").
+
+Why This Matters:
+• People's buying decisions often hinge on their emotions, not just the facts.
+• Speaking to the internal problem (the fear, anxiety, frustration, or longing) makes your solution resonate more deeply.
+• When you acknowledge both the external issue and the internal struggle, customers are more likely to trust you, because you're addressing what they truly feel.
+
+Goal:
+• Present a product that fixes the external issue (e.g., an app for secure photo storage).
+• Communicate how it eases the internal worry or frustration ("Feel at peace knowing your personal pictures stay private").
+
+1. Why People Buy: The Basics
+
+People Have Problems or Desires
+• They might feel a specific pain (e.g., data loss stress, being overweight) or want to reach a goal (e.g., stronger body, safer photos).
+• Example: A busy parent is frustrated that all their personal photos are scattered and unprotected online, and they're worried about leaks.
+
+They Pay for Solutions
+• If a product/service clearly solves a real, pressing issue, people see it as valuable.
+• Example: This busy parent is willing to pay for a secure photo storage app if it truly keeps their pictures private.
+
+Motivation: Pain Relief or Goal Fulfillment
+• Pain Relief: "I'm tired of worrying about X; I need relief now."
+• Goal Fulfillment: "I want to reach Y, and I need help getting there."
+• Example: Pain relief = fear of embarrassing photo leaks; goal fulfillment = the confidence of knowing precious memories are safe.
+
+Value = Problem Solved
+• The bigger or more urgent the problem, the higher the perceived value in fixing it.
+• Example: If losing or leaking photos would cause major anxiety, then a reliable privacy solution is seen as extremely valuable.
+
+2. The Hero's Journey (StoryBrand Approach)
+
+In StoryBrand, we position the customer as the hero of the story. You (as the business) act as the guide who helps them on their journey. The framework often looks like this:
+
+A Hero Has a Problem
+• The customer (hero) is facing a challenge or gap.
+• Example Hero Problem: "I'm worried someone will see my private photos" or "I can't lose weight despite trying so many diets."
+
+They Meet a Guide
+• The business (guide) appears with empathy (understanding the problem) and authority (offering a proven solution).
+• Example: "Our secure app ensures your photos remain private, using top-level encryption."
+
+The Guide Gives Them a Plan
+• Present a simple path for the hero to follow.
+• Example Steps:
+1. Download the secure photo app.
+2. Sync your photo library.
+3. Rest easy knowing your pictures are safe.
+
+Call to Action
+• The hero is prompted to use or buy the solution.
+• Example CTA: "Start your free trial and protect your memories today!"
+
+Success or Failure
+• Success: The hero solves their problem and feels relief, pride, or excitement.
+• Failure: Without the solution, the hero remains stuck, anxious, or at risk.
+• Example: Success = no more stress or fear of leaks; Failure = embarrassing data breach, or losing important pictures forever.
+
+3. Tying It All Together: Examples
+
+A. Weight-Loss Journey
+• Hero's Problem (External): "I'm overweight and it hurts my self-confidence."
+• Hero's Problem (Internal): "I feel ashamed and out of control."
+• Guide's Plan: Provide a simple diet/exercise roadmap + a supportive community.
+• Call to Action: "Join our 30-day program and see real progress."
+• Success: "Lose weight, feel confident, and gain energy," or Failure: stay stuck in low self-esteem.
+
+B. Secure Photo Storage
+• Hero's Problem (External): "My personal images aren't safe—someone could hack or leak them."
+• Hero's Problem (Internal): "I'm anxious about being humiliated or invaded."
+• Guide's Plan: "Download our private app, sync your photos, and safeguard them with encryption."
+• Call to Action: "Get the premium version for total peace of mind."
+• Success: "My memories are protected, and I feel relieved;" or Failure: "I stay worried about leaks."
+
+4. Why This Matters for Your Business
+
+• Emotional Connection: Recognizing the internal struggle (fear, anxiety, frustration) fosters deeper trust.
+• Clear, Simple Plan: When customers see an easy path forward, they're more likely to act.
+• Sense of Urgency: By highlighting what they might lose or miss out on, you help them realize the cost of not solving the problem.
+• Lasting Customer Loyalty: Guiding someone from problem to solution builds a strong relationship, often leading to repeat business or referrals.
+
+5. Practical Tips
+
+1. Speak to the Internal Problem: Whether it's fear, shame, or frustration, show you understand how they feel.
+2. Offer a Straightforward Plan: Present just a few steps so they're not overwhelmed.
+3. Use Before/After Visions: Paint a clear picture of the hero's life if they do (or don't) take action.
+4. Stay Honest: Promise only what your solution truly delivers—avoid hype that sets unrealistic expectations.
+
+Final Thoughts
+
+When you combine the idea that people buy to solve both practical and emotional needs with a StoryBrand-style narrative, you create a powerful message that resonates. Customers see themselves as the hero, facing a real challenge, guided by a trustworthy mentor (your business) who provides a clear plan and outcome. This aligns why people buy with the hero's journey—turning everyday transactions into meaningful solutions.`
   },
   {
     id: "start-small",
